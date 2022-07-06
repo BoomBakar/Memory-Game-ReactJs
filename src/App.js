@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import './App.css';
+import Cards from './components/Cards'
 
 const cardImages = [
   {"src" : "/img/helmet-1.png"},
@@ -31,8 +32,17 @@ function App() {
     <div className="App">
       <h1>Memory game</h1>
       <button onClick={shuffleCards}>New Game</button>
+      <div className="card-grid">
+        {cards.map(card => (
+          
+            <Cards key={card.id} card={card} />
+          
+          ))}
+      </div>
     </div>
-  );
+    );
 }
+
+        
 
 export default App;
